@@ -5,6 +5,7 @@
 		<meta charset="UTF-8">
 		<title>angular4.0开始入门</title>
 	</head>
+
 	<body>
 		<a href="https://angular.cn/guide/quickstart">配置环境文档教程</a><br />
 		<a href="http://www.qinimai.com/topic/9.html">angular4.0学习</a><br />
@@ -12,8 +13,10 @@
 		<a href="https://my.oschina.net/terrilltang/blog/903727">动画</a><br />
 		<a href="http://www.cnblogs.com/cyfm/p/6913929.html">动画</a>
 		<a href="http://www.iqiyi.com/playlist444390202.html">爱奇艺视频</a>
+		<a href="https://segmentfault.com/a/1190000008611655">angular2-swiper幻灯片模块使用方法</a>
+		<a href="https://segmentfault.com/a/1190000008067087">md5加密</a>
 		<p>
-			这个架构图展现了 Angular 应用中的 8 个主要构造块：      
+			这个架构图展现了 Angular 应用中的 8 个主要构造块：
 			<ul>
 				<li>模块 (module)</li>
 				<li>组件 (component)</li>
@@ -106,6 +109,26 @@
 		3.在根组件里配置页面显示的地方   <router-outlet></router-outlet>
 		
 		
+		1.引入jQuery和bootstrap
+		a.安装jquery和bootstrap
+		npm install jquery --save
+		npm install bootstrap --save
+		b.安装@types/jquery 
+		npm install @types/jquery --save-dev <!-- 这一步是让jquery可以在Ts文件中被识别使用 --!>
+		引入require
+        npm install @types/node --save-dev
+		在项目的根目录下找到.angular-cli.json文件修改其配置，修改时注意引用路径是以index.html文件为起始路径，而不是项目根路径
+		 "styles": [
+      "../node_modules/bootstrap/dist/css/bootstrap.min.css",<!-- 这里添加bootstrap引用路径 --!>
+        "scss/style.scss"
+      ],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.js"<!-- 这里添加jquery引用路径 --!>
+      ],
+      在src/typings.d.ts 中添加
+
+declare var $: JQueryStatic;
+declare var require: any;
 	-->
 
 </html>
